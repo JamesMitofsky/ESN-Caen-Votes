@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 type TextAnimationProps = {
-  texts: string[];
+  texts: { voteInGivenLanguage: string; flag: string }[];
   duration?: number;
 };
 
@@ -23,13 +23,14 @@ const TextAnimation = ({ texts, duration = 2 }: TextAnimationProps) => {
     <span>
       <AnimatePresence mode='wait'>
         <motion.div
-          key={texts[currentTextIndex]}
+          key={texts[currentTextIndex].voteInGivenLanguage}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          {texts[currentTextIndex]}
+          {texts[currentTextIndex].voteInGivenLanguage}{' '}
+          {texts[currentTextIndex].flag}
         </motion.div>
       </AnimatePresence>
     </span>

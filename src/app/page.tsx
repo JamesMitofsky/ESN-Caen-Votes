@@ -1,11 +1,13 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
 import '@/lib/env';
 
 import UnderlineLink from '@/components/links/UnderlineLink';
 import TextAnimation from '@/components/TextAnimation';
+import { VotingPlanForm } from '@/components/VotingPlanForm';
 
 /**
  * SVGR Support
@@ -20,28 +22,33 @@ import TextAnimation from '@/components/TextAnimation';
 
 export default function HomePage() {
   const multiLanguageVote = [
-    'Votes', // English
-    'Va Voter', // French
-    'Votos', // Spanish
-    'Stimmen', // German
-    'Voti', // Italian
-    'Ψήφοι', // Greek
-    'голоса', // Russian
-    'أصوات', // Arabic
-    'Votos', // Portuguese
-    'Oylar', // Turkish
+    { voteInGivenLanguage: 'Votes', flag: '🇺🇸' }, // English
+    { voteInGivenLanguage: 'Vote', flag: '🇫🇷' }, // French
+    { voteInGivenLanguage: 'Stimmt ab', flag: '🇩🇪' }, // German (imperative but neutral, meaning "Vote")
+    { voteInGivenLanguage: 'Votamos', flag: '🇪🇸' }, // Spanish (can be used without subject, meaning "We vote")
+    { voteInGivenLanguage: 'Votiamo', flag: '🇮🇹' }, // Italian (can be used without subject, meaning "We vote")
+    { voteInGivenLanguage: 'Ψηφίστε', flag: '🇬🇷' }, // Greek (imperative, but used similarly, meaning "Vote")
+    { voteInGivenLanguage: 'Голосуем', flag: '🇷🇺' }, // Russian (neutral, no subject, meaning "Voting")
+    { voteInGivenLanguage: 'نصوت', flag: '🇸🇦' }, // Arabic (neutral, no subject, meaning "We vote")
+    { voteInGivenLanguage: 'Votamos', flag: '🇵🇹' }, // Portuguese (can be used without subject, meaning "We vote")
+    { voteInGivenLanguage: 'Oy Veriyoruz', flag: '🇹🇷' }, // Turkish (neutral, meaning "Voting")
   ];
 
   return (
     <main>
       <Head>
-        <title>Hi</title>
+        <title>ESN Caen Votes</title>
       </Head>
       <section className='bg-white'>
         <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
-          <div className='flex gap-3 justify-center items-center mb-6'>
-            <h1 className='flex flex-col gap-6 text-8xl'>
-              <span className='flex gap-3'>
+          <div className='flex gap-3 justify-center items-center mb-6 w-full'>
+            <h1 className='flex flex-col gap-6 text-8xl w-full items-center'>
+              <motion.span
+                className='flex gap-3'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 <Image
                   src='/esn-logo.png'
                   alt='Logo'
@@ -49,22 +56,21 @@ export default function HomePage() {
                   height={100}
                 />
                 ESN Caen
-              </span>
+              </motion.span>
               <TextAnimation texts={multiLanguageVote} duration={3} />
             </h1>
           </div>
-          <p className='mt-2 text-sm text-gray-800'>
-            Voting while studying abroad can be tricky — we're here to help!
-          </p>
-          {/* <p className='mt-2 text-sm text-gray-700'>
-            <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-              See the repository
-            </ArrowLink>
-          </p> */}
-
-          {/* <ButtonLink className='mt-6' href='/components' variant='light'>
-            See all components
-          </ButtonLink> */}
+          <div className='my-20 gap-3 flex flex-col'>
+            <p className='text-sm text-gray-800'>
+              Voting while studying abroad can be tricky — no matter where
+              you're from, we're here to help!
+            </p>
+            <p className=' text-sm text-gray-800'>
+              Join the dozens of students who have already committed to voting!
+              Fill in the form below to join them.
+            </p>
+          </div>
+          <VotingPlanForm />
           <footer className='absolute bottom-2 text-gray-700'>
             Made with ❤️ by{' '}
             <UnderlineLink href='https://jamesm.it'>
