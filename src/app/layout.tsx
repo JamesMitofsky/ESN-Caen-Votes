@@ -5,6 +5,8 @@ import '@/styles/globals.css';
 // !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
 
+import UnderlineLink from '@/components/links/UnderlineLink';
+
 import { siteConfig } from '@/constant/config';
 
 export const metadata: Metadata = {
@@ -54,7 +56,17 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <body>
+        <main className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
+          {children}
+          <footer className='absolute bottom-2 text-gray-700'>
+            Made with ❤️ by{' '}
+            <UnderlineLink href='https://jamesm.it'>
+              James Mitofsky
+            </UnderlineLink>
+          </footer>
+        </main>
+      </body>
     </html>
   );
 }
