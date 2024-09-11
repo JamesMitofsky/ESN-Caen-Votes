@@ -42,7 +42,7 @@ export default function HomePage() {
       <section className='bg-white'>
         <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
           <div className='flex gap-3 justify-center items-center mb-6 w-full'>
-            <h1 className='flex flex-col gap-6 text-4xl md:text-8xl w-full items-center'>
+            <h1 className='flex flex-col gap-6 text-5xl md:text-8xl w-full items-center'>
               <motion.span
                 className='flex gap-3 items-center'
                 initial={{ opacity: 0, y: 20 }}

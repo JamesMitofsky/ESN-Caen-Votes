@@ -20,7 +20,7 @@ const TextAnimation = ({ texts, duration = 2 }: TextAnimationProps) => {
   }, [texts, duration]);
 
   return (
-    <span>
+    <span className='text-4xl md:text-8xl'>
       <AnimatePresence mode='wait'>
         <motion.div
           key={texts[currentTextIndex].voteInGivenLanguage}
