@@ -6,6 +6,7 @@ import Image from 'next/image';
 import '@/lib/env';
 
 import TextAnimation from '@/components/TextAnimation';
+import { TotalNumber } from '@/components/TotalNumber';
 import { VotingPlanForm } from '@/components/VotingPlanForm';
 
 /**
@@ -67,8 +68,7 @@ export default function HomePage() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className='text-lg'
         >
-          Voting while studying abroad can be tricky. Never fear! We're here to
-          help!
+          Voting while studying abroad can be tricky. We're here to help!
         </motion.span>
         <motion.span
           initial={{ opacity: 0 }}
@@ -80,7 +80,7 @@ export default function HomePage() {
           we're committed to making sure you succeed in participating in yours,
           no matter where you're from. Even if you haven't been involved in
           elections in the past or don't know when the next one is, we'll work
-          with you to figure it out! It all begins with a committment: to vote.
+          with you to figure it out!
         </motion.span>
         <motion.span
           initial={{ opacity: 0 }}
@@ -88,8 +88,19 @@ export default function HomePage() {
           transition={{ duration: 0.5, delay: 1.5 }}
           className='text-md'
         >
-          Join the dozens of students who have already committed voting.
+          Join the students who have already taken the challenge.
         </motion.span>
+        <div>
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
+            className='text-md'
+          >
+            <TotalNumber targetNumber={13} initialValue={1} />
+            <p className='text-sm text-gray-800'>since September</p>
+          </motion.span>
+        </div>
       </div>
       <VotingPlanForm />
     </>
