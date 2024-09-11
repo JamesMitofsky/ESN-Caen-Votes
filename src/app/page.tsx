@@ -37,7 +37,7 @@ export default function HomePage() {
   return (
     <main>
       <Head>
-        <title>ESN Caen Votes</title>
+        <title>Make a plan to vote</title>
       </Head>
       <section className='bg-white'>
         <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
@@ -60,16 +60,21 @@ export default function HomePage() {
               <TextAnimation texts={multiLanguageVote} duration={3} />
             </h1>
           </div>
-          <div className='my-20 gap-3 flex flex-col'>
-            <p className='text-sm text-gray-800'>
+          <div className='my-16 gap-8 flex flex-col text-gray-800  justify-center items-center'>
+            <p className='text-lg'>
               Voting while studying abroad can be tricky — no matter where
               you're from, we're here to help!
             </p>
-            <p className=' text-sm text-gray-800'>
-              Join the dozens of students who have already committed to voting!
-              Fill in the form below to join them.
+            <p className='text-md max-w-3xl'>
+              Elections are happening on various schedules around the world, and
+              we're committed to making sure you succeed in participating in
+              yours. Even if you don't know when the next election is, we'll
+              work with you to figure it out! It all begins with a committment.
             </p>
           </div>
+          <p className='text-md mb-8'>
+            Join the dozens of students who have already committed voting.
+          </p>
           <VotingPlanForm />
           <footer className='absolute bottom-2 text-gray-700'>
             Made with ❤️ by{' '}
