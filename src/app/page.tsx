@@ -63,21 +63,36 @@ export default function HomePage() {
             </h1>
           </div>
           <div className='gap-8 py-8 flex flex-col text-gray-800 items-center'>
-            <p className='text-lg'>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className='text-lg'
+            >
               Voting while studying abroad can be tricky. Never fear! We're here
               to help!
-            </p>
-            <p className='text-md max-w-3xl'>
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              className='text-md max-w-3xl'
+            >
               Elections are happening on various schedules around the world, and
               we're committed to making sure you succeed in participating in
               yours, no matter where you're from. Even if you haven't been
               involved in elections in the past or don't know when the next one
               is, we'll work with you to figure it out! It all begins with a
               committment: to vote.
-            </p>
-            <p className='text-md'>
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.5 }}
+              className='text-md'
+            >
               Join the dozens of students who have already committed voting.
-            </p>
+            </motion.span>
           </div>
           <VotingPlanForm />
           <footer className='absolute bottom-2 text-gray-700'>

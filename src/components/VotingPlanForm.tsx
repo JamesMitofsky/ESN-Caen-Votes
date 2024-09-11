@@ -1,8 +1,13 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export const VotingPlanForm = () => {
   return (
-    <form
+    <motion.form
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 2 }}
       action='https://api.web3forms.com/submit'
       method='POST'
       className='w-full max-w-sm mb-6'
@@ -45,6 +50,6 @@ export const VotingPlanForm = () => {
           Make a plan to vote!
         </button>
       </div>
-    </form>
+    </motion.form>
   );
 };
