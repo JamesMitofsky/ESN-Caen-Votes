@@ -62,7 +62,7 @@ export default function HomePage() {
               <TextAnimation texts={multiLanguageVote} duration={3} />
             </h1>
           </div>
-          <div className='my-16 gap-8 flex flex-col text-gray-800  justify-center items-center'>
+          <div className='gap-8 py-8 flex flex-col text-gray-800 items-center'>
             <p className='text-lg'>
               Voting while studying abroad can be tricky. Never fear! We're here
               to help!
@@ -75,10 +75,10 @@ export default function HomePage() {
               is, we'll work with you to figure it out! It all begins with a
               committment: to vote.
             </p>
+            <p className='text-md'>
+              Join the dozens of students who have already committed voting.
+            </p>
           </div>
-          <p className='text-md mb-8'>
-            Join the dozens of students who have already committed voting.
-          </p>
           <VotingPlanForm />
           <footer className='absolute bottom-2 text-gray-700'>
             Made with ❤️ by{' '}
