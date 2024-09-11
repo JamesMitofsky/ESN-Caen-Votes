@@ -1,13 +1,11 @@
 'use client';
 
 import Head from 'next/head';
-import * as React from 'react';
+import Image from 'next/image';
 import '@/lib/env';
 
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
+import TextAnimation from '@/components/TextAnimation';
 
 /**
  * SVGR Support
@@ -16,13 +14,24 @@ import UnstyledLink from '@/components/links/UnstyledLink';
  * You can override the next-env if the type is important to you
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
-import Logo from '~/svg/Logo.svg';
 
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
 // to customize the default configuration.
 
 export default function HomePage() {
+  const multiLanguageVote = [
+    'Votes', // English
+    'Va Voter', // French
+    'Votos', // Spanish
+    'Stimmen', // German
+    'Voti', // Italian
+    'Ψήφοι', // Greek
+    'голоса', // Russian
+    'أصوات', // Arabic
+    'Votos', // Portuguese
+    'Oylar', // Turkish
+  ];
+
   return (
     <main>
       <Head>
@@ -30,39 +39,36 @@ export default function HomePage() {
       </Head>
       <section className='bg-white'>
         <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
-          <Logo className='w-16' />
-          <h1 className='mt-4'>Next.js + Tailwind CSS + TypeScript Starter</h1>
+          <div className='flex gap-3 justify-center items-center mb-6'>
+            <h1 className='flex flex-col gap-6 text-8xl'>
+              <span className='flex gap-3'>
+                <Image
+                  src='/esn-logo.png'
+                  alt='Logo'
+                  width={100}
+                  height={100}
+                />
+                ESN Caen
+              </span>
+              <TextAnimation texts={multiLanguageVote} duration={3} />
+            </h1>
+          </div>
           <p className='mt-2 text-sm text-gray-800'>
-            A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-            Import, Seo, Link component, pre-configured with Husky{' '}
+            Voting while studying abroad can be tricky — we're here to help!
           </p>
-          <p className='mt-2 text-sm text-gray-700'>
+          {/* <p className='mt-2 text-sm text-gray-700'>
             <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
               See the repository
             </ArrowLink>
-          </p>
+          </p> */}
 
-          <ButtonLink className='mt-6' href='/components' variant='light'>
+          {/* <ButtonLink className='mt-6' href='/components' variant='light'>
             See all components
-          </ButtonLink>
-
-          <UnstyledLink
-            href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-            className='mt-4'
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              width='92'
-              height='32'
-              src='https://vercel.com/button'
-              alt='Deploy with Vercel'
-            />
-          </UnstyledLink>
-
+          </ButtonLink> */}
           <footer className='absolute bottom-2 text-gray-700'>
-            © {new Date().getFullYear()} By{' '}
-            <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-              Theodorus Clarence
+            Made with ❤️ by{' '}
+            <UnderlineLink href='https://jamesm.it'>
+              James Mitofsky
             </UnderlineLink>
           </footer>
         </div>
