@@ -62,14 +62,16 @@ export default function HomePage() {
           </div>
           <div className='my-16 gap-8 flex flex-col text-gray-800  justify-center items-center'>
             <p className='text-lg'>
-              Voting while studying abroad can be tricky — no matter where
-              you're from, we're here to help!
+              Voting while studying abroad can be tricky. Never fear! We're here
+              to help!
             </p>
             <p className='text-md max-w-3xl'>
               Elections are happening on various schedules around the world, and
               we're committed to making sure you succeed in participating in
-              yours. Even if you don't know when the next election is, we'll
-              work with you to figure it out! It all begins with a committment.
+              yours, no matter where you're from. Even if you haven't been
+              involved in elections in the past or don't know when the next one
+              is, we'll work with you to figure it out! It all begins with a
+              committment: to vote.
             </p>
           </div>
           <p className='text-md mb-8'>
