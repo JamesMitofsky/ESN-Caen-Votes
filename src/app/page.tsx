@@ -21,7 +21,7 @@ import { VotingPlanForm } from '@/components/VotingPlanForm';
 
 export default function HomePage() {
   const multiLanguageVote = [
-    { voteInGivenLanguage: 'Votes', flag: '🇺🇸' }, // English
+    { voteInGivenLanguage: 'Votes', flag: '' }, // English
     { voteInGivenLanguage: 'Vote', flag: '🇫🇷' }, // French
     { voteInGivenLanguage: 'Stimmt ab', flag: '🇩🇪' }, // German (imperative but neutral, meaning "Vote")
     { voteInGivenLanguage: 'Votamos', flag: '🇪🇸' }, // Spanish (can be used without subject, meaning "We vote")
